@@ -20,6 +20,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    //引入对 DataBinding 的支持
+    dataBinding{
+        enabled = true
+    }
 }
 
 dependencies {
