@@ -2,13 +2,33 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
-
+        <import type="java.util.List"/>
+        <import type="com.example.cjy.databinding.bean.User"/>
+        <variable
+            name="userList"
+            type="List&lt;User&gt;" />
+        <variable
+            name="index"
+            type="Integer" />
     </data>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
-    </LinearLayout>
+        <TextView
+            android:id="@+id/tvName"
+            android:text="@{userList.get(index).name,default = cjy}"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_below="@id/tvName"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:id="@+id/tvSize"
+            android:text="@{String.valueOf(userList.size())}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
 </layout>
