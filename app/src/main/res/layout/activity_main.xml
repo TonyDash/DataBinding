@@ -56,14 +56,24 @@
             android:text="@string/click_event"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
         <Button
-            app:layout_constraintLeft_toRightOf="@id/btn2ClickEvent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginStart="5dp"
-            android:text="@string/list"
             android:id="@+id/btn2List"
-            android:onClick="@{clickEvent::mainClick}"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:onClick="@{clickEvent::mainClick}"
+            android:text="@string/list"
+            app:layout_constraintLeft_toRightOf="@id/btn2ClickEvent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn2Animal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/animal"
+            android:onClick="@{clickEvent::mainClick}"
+            app:layout_constraintLeft_toRightOf="@id/btn2List"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
