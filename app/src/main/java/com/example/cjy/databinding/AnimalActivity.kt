@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.databinding.ObservableArrayMap
 import com.example.cjy.databinding.bean.Animal
 import com.example.cjy.databinding.clickevent.AnimalClickEvent
 import com.example.cjy.databinding.databinding.ActivityAnimalBinding
@@ -18,6 +19,10 @@ class AnimalActivity:AppCompatActivity() {
         dog.nickName.set("小黄")
         dog.age.set(3)
         animalBinding.animal = dog
-        animalBinding.clickEvent = AnimalClickEvent(dog)
+        val map = ObservableArrayMap<String,String>()
+        map["pat"] = "dog"
+        animalBinding.animalInfo = map
+        animalBinding.key = "pat"
+        animalBinding.clickEvent = AnimalClickEvent(dog,map)
     }
 }

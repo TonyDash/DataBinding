@@ -3,9 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+
+        <variable
+            name="animalInfo"
+            type="androidx.databinding.ObservableArrayMap&lt;String,String&gt;" />
+
+        <variable
+            name="key"
+            type="String" />
+
         <variable
             name="animal"
             type="com.example.cjy.databinding.bean.Animal" />
+
         <variable
             name="clickEvent"
             type="com.example.cjy.databinding.clickevent.AnimalClickEvent" />
@@ -17,26 +27,38 @@
 
         <TextView
             android:id="@+id/tvAnimalNickName"
-            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{animal.nickName ,default = nickName}"
             android:onClick="@{clickEvent::animalClick}"
+            android:text="@{animal.nickName ,default = nickName}"
+            android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:textColor="@color/black"
-            android:layout_marginTop="10dp"
             android:id="@+id/tvAnimalAge"
             android:layout_width="wrap_content"
-            android:text="@{String.valueOf(animal.age) ,default=1}"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:onClick="@{clickEvent::animalClick}"
+            android:text="@{String.valueOf(animal.age) ,default=1}"
+            android:textColor="@color/black"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvAnimalNickName" />
+
+        <TextView
+            android:id="@+id/tvAnimalInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:onClick="@{clickEvent::animalClick}"
+            android:text="@{animalInfo[key],default = tom}"
+            android:textColor="@color/black"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvAnimalAge" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
