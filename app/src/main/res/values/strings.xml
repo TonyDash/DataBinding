@@ -4,4 +4,5 @@
     <string name="click_event">click event</string>
     <string name="list">list</string>
     <string name="animal">animal</string>
+    <string name="changePhotoUrl">改变图片地址</string>
 </resources>

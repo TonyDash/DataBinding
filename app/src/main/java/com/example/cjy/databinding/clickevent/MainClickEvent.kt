@@ -25,6 +25,9 @@ class MainClickEvent {
                     view.context.startActivity(this)
                 }
             }
+            R.id.btnChangePhoto->{
+
+            }
         }
     }
 }

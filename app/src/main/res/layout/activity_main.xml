@@ -20,6 +20,10 @@
         <variable
             name="clickEvent"
             type="com.example.cjy.databinding.clickevent.MainClickEvent" />
+
+        <variable
+            name="image"
+            type="com.example.cjy.databinding.util.GlideUtil" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -48,6 +52,17 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/name" />
 
+        <ImageView
+            android:id="@+id/ivPhoto"
+            error="@{}"
+            imageUrl="@{}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvAge" />
+
         <Button
             android:id="@+id/btn2ClickEvent"
             android:layout_width="wrap_content"
@@ -71,9 +86,17 @@
             android:id="@+id/btn2Animal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/animal"
             android:onClick="@{clickEvent::mainClick}"
+            android:text="@string/animal"
             app:layout_constraintLeft_toRightOf="@id/btn2List"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnChangePhoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/changePhotoUrl"
+            app:layout_constraintLeft_toRightOf="@id/btn2Animal"
+            app:layout_constraintTop_toTopOf="@id/btn2Animal" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
